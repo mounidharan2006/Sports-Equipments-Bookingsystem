@@ -30,6 +30,10 @@ if (process.env.NODE_ENV === 'development') {
 
 // Set static folder
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'modules', 'user-management', 'public')));
+app.use(express.static(path.join(__dirname, 'modules', 'equipment-management', 'public')));
+app.use(express.static(path.join(__dirname, 'modules', 'booking-management', 'public')));
+
 
 const PORT = process.env.PORT || 5000;
 
@@ -46,10 +50,10 @@ app.use(session({
 }));
 
 // Route files
-const authRoutes = require('./routes/authRoutes');
-const equipmentRoutes = require('./routes/equipmentRoutes');
-const bookingRoutes = require('./routes/bookingRoutes');
-const userRoutes = require('./routes/userRoutes');
+const authRoutes = require('./modules/user-management/routes/authRoutes');
+const equipmentRoutes = require('./modules/equipment-management/routes/equipmentRoutes');
+const bookingRoutes = require('./modules/booking-management/routes/bookingRoutes');
+const userRoutes = require('./modules/user-management/routes/userRoutes');
 
 // Mount routers 
 app.use('/api/auth', authRoutes);

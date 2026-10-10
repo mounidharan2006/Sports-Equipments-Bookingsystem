@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - Sports Equipment Booking System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="bg-light">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container-fluid px-4">
+            <a class="navbar-brand" href="index.html"><i class="fa-solid fa-medal"></i> SportsBook</a>
+            <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="equipment.html">Equipment</a></li>
+                    <li class="nav-item d-flex align-items-center">
+                        <span class="text-light me-3 d-none d-lg-block">Welcome, <span id="user-name-nav" class="fw-bold text-orange">User</span></span>
+                        <a class="btn btn-outline-primary text-white" href="#" id="logout-btn">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <nav class="col-md-3 col-lg-2 d-md-block sidebar py-4">
+                <div class="position-sticky">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="dashboard.html">
+                                <i class="fa-solid fa-gauge-high me-2"></i> Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="equipment.html">
+                                <i class="fa-solid fa-magnifying-glass me-2"></i> Browse Equipment
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="my-bookings.html">
+                                <i class="fa-solid fa-calendar-check me-2"></i> My Bookings
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="profile.html">
+                                <i class="fa-solid fa-user me-2"></i> My Profile
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Main content -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 py-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-4 border-bottom">
+                    <h1 class="h2">My Profile</h1>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-8 col-lg-6">
+                        <div class="card shadow-sm border-0">
+                            <div class="card-body p-4">
+                                <div id="alert-container"></div>
+                                <div class="text-center mb-4">
+                                    <div class="rounded-circle bg-primary text-white d-inline-flex align-items-center justify-content-center mx-auto mb-3" style="width: 80px; height: 80px; font-size: 32px;">
+                                        <i class="fa-solid fa-user"></i>
+                                    </div>
+                                    <h4 id="display-name" class="fw-bold m-0"></h4>
+                                    <p id="display-reg" class="text-muted"></p>
+                                </div>
+                                
+                                <form id="profile-form">
+                                    <div class="mb-3">
+                                        <label class="form-label text-muted fw-bold">Full Name</label>
+                                        <input type="text" class="form-control bg-light" id="fullName" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label text-muted fw-bold">Register Number (Unchangeable)</label>
+                                        <input type="text" class="form-control" id="registerNumber" disabled>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label text-muted fw-bold">Email Address (Unchangeable)</label>
+                                        <input type="email" class="form-control" id="email" disabled>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label text-muted fw-bold">Phone Number</label>
+                                        <input type="text" class="form-control bg-light" id="phone" pattern="\d{10}" required>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label text-muted fw-bold">Department</label>
+                                            <input type="text" class="form-control bg-light" id="department" required>
+                                        </div>
+                                        <div class="col-md-6 mb-4">
+                                            <label class="form-label text-muted fw-bold">Year of Study</label>
+                                            <select class="form-select bg-light" id="yearOfStudy" required>
+                                                <option value="1">1st Year</option>
+                                                <option value="2">2nd Year</option>
+                                                <option value="3">3rd Year</option>
+                                                <option value="4">4th Year</option>
+                                                <option value="PG">Postgraduate</option>
+                                                <option value="Staff">Staff</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary w-100" id="save-btn">Save Changes</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/profile.js"></script>
+</body>
+</html>

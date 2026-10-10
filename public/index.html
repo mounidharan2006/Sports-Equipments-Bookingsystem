@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Equipment Booking System</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fa-solid fa-medal"></i> SportsBook
+            </a>
+            <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0" id="nav-items">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="equipment.html">Equipment</a></li>
+                    <li class="nav-item auth-hide"><a class="nav-link" href="login.html">Login</a></li>
+                    <li class="nav-item auth-hide"><a class="btn btn-primary ms-2" href="register.html">Register</a></li>
+                    <li class="nav-item auth-show d-none"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+                    <li class="nav-item auth-show d-none"><a class="btn btn-outline-primary text-white ms-2" href="#" id="logout-btn">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h1>Book Your Sports Equipment Easily</h1>
+                    <p>Access high-quality sports gear for your next game. Browse, book, and play with our seamless equipment reservation system designed for athletes.</p>
+                    <div class="mt-4">
+                        <a href="register.html" class="btn btn-primary btn-lg me-3">Get Started</a>
+                        <a href="equipment.html" class="btn btn-outline-light btn-lg rounded-pill px-4">Explore Equipment</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="py-5 bg-white">
+        <div class="container">
+            <h2 class="text-center mb-5 fw-bold" style="color: var(--primary);">How It Works</h2>
+            <div class="row text-center g-4">
+                <div class="col-md-4">
+                    <div class="p-4 rounded shadow-sm h-100" style="background: var(--light);">
+                        <i class="fa-solid fa-user-plus fa-3x text-orange mb-3"></i>
+                        <h4>1. Register</h4>
+                        <p class="text-muted">Create your account with your student or staff details.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-4 rounded shadow-sm h-100" style="background: var(--light);">
+                        <i class="fa-solid fa-magnifying-glass fa-3x text-orange mb-3"></i>
+                        <h4>2. Browse & Book</h4>
+                        <p class="text-muted">Explore available equipment and select your dates.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-4 rounded shadow-sm h-100" style="background: var(--light);">
+                        <i class="fa-solid fa-check-circle fa-3x text-orange mb-3"></i>
+                        <h4>3. Confirm & Play</h4>
+                        <p class="text-muted">Confirm your reservation and enjoy your game.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="py-5" style="background: var(--light);">
+        <div class="container">
+            <h2 class="text-center mb-5 fw-bold">Categories</h2>
+            <div class="row g-4 justify-content-center">
+                <div class="col-6 col-md-3 text-center">
+                    <div class="bg-white p-4 rounded shadow-sm cat-card">
+                        <i class="fa-solid fa-baseball-bat-ball fa-2x text-orange mb-2"></i>
+                        <h5>Cricket</h5>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3 text-center">
+                    <div class="bg-white p-4 rounded shadow-sm cat-card">
+                        <i class="fa-solid fa-futbol fa-2x text-orange mb-2"></i>
+                        <h5>Football</h5>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3 text-center">
+                    <div class="bg-white p-4 rounded shadow-sm cat-card">
+                        <i class="fa-solid fa-basketball fa-2x text-orange mb-2"></i>
+                        <h5>Basketball</h5>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3 text-center">
+                    <div class="bg-white p-4 rounded shadow-sm cat-card">
+                        <i class="fa-solid fa-table-tennis-paddle-ball fa-2x text-orange mb-2"></i>
+                        <h5>Racket Sports</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p class="mb-0">&copy; 2023 Sports Equipment Booking System. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.css"></script>
+    <script src="/js/main.js"></script>
+</body>
+</html>

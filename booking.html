@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Equipment - Sports Equipment Booking System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="bg-light">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container-fluid px-4">
+            <a class="navbar-brand" href="index.html"><i class="fa-solid fa-medal"></i> SportsBook</a>
+            <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="equipment.html">Equipment</a></li>
+                    <li class="nav-item d-flex align-items-center">
+                        <a class="btn btn-outline-primary text-white ms-2" href="dashboard.html">Dashboard</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card shadow-sm p-4">
+                    <h3 class="fw-bold mb-4 text-primary border-bottom pb-3">Book Equipment</h3>
+                    
+                    <div id="equipment-details" class="mb-4 d-none bg-light p-3 rounded d-flex align-items-center">
+                        <img id="eq-img" src="" alt="" style="width: 80px; height: 80px; object-fit: cover; border-radius: 10px;" class="me-3 shadow-sm">
+                        <div>
+                            <h5 id="eq-name" class="fw-bold text-primary mb-1"></h5>
+                            <span id="eq-cat" class="badge bg-secondary mb-2"></span>
+                            <p id="eq-stock" class="mb-0 text-muted small fw-bold"></p>
+                        </div>
+                    </div>
+
+                    <div id="alert-container"></div>
+                    
+                    <form id="booking-form">
+                        <input type="hidden" id="equipmentId">
+                        
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label fw-bold">Quantity</label>
+                                <input type="number" class="form-control" id="quantity" min="1" value="1" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label fw-bold">Purpose of Booking</label>
+                                <select class="form-select" id="purpose" required>
+                                    <option value="">Select Purpose</option>
+                                    <option value="Practice">Practice Session</option>
+                                    <option value="Tournament">Tournament/Match</option>
+                                    <option value="Recreation">Recreational Play</option>
+                                    <option value="Class">Sports Class</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label fw-bold">Start Date</label>
+                                <input type="date" class="form-control" id="startDate" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label fw-bold">End Date</label>
+                                <input type="date" class="form-control" id="endDate" required>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label fw-bold">Additional Notes (Optional)</label>
+                            <textarea class="form-control" id="notes" rows="3" placeholder="Any specific requirements..."></textarea>
+                        </div>
+
+                        <div class="d-flex gap-3">
+                            <button type="submit" class="btn btn-primary px-4 py-2" id="submit-btn">Confirm Booking</button>
+                            <a href="equipment.html" class="btn btn-outline-secondary px-4 py-2">Cancel</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/booking.js"></script>
+</body>
+</html>

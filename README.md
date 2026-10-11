@@ -1,78 +1,25 @@
-# Sports Equipment Booking System
+# Booking Management Module (N)
 
-A complete full-stack web application designed for students and sports users to register, browse, and book sports equipment. 
+This module handles equipment reservations, history, and booking lifecycle.
 
-## Features
-- User Authentication (Register, Login, Session-based)
-- Dashboard showing active/pending bookings
-- Equipment Catalog with Search, Category Filter, and Sorting
-- Secure booking functionality with real-time stock availability check
-- Profile management
+## Jira Tasks
+- **TSEBS-7 Book Equipment**: Implemented via `POST /api/bookings`
+- **TSEBS-8 View Booking History**: Implemented via `GET /api/bookings/my`
+- **TSEBS-9 Cancel Booking**: Implemented via `PATCH /api/bookings/:id/cancel`
+- **TSEBS-10 Process Payment**: *Pending implementation*
+- **TSEBS-11 Rate Equipment**: *Pending implementation*
 
-## Tech Stack
-- Frontend: HTML5, CSS3, JavaScript, Bootstrap 5, FontAwesome
-- Backend: Node.js, Express.js
-- Database: MongoDB with Mongoose
-- Authentication: Express Sessions + HTTP Only Cookies + bcrypt
+## Associated Files
+### Backend
+- `controllers/bookingController.js` (Create, get my bookings, cancel, get single)
+- `routes/bookingRoutes.js`
 
-## Prerequisites
-- Node.js installed (v14 or higher)
-- MongoDB installed and running locally OR a MongoDB Atlas URI
+### Frontend
+- `public/booking.html` & `public/js/booking.js` (Booking creation form)
+- `public/my-bookings.html` & `public/js/my-bookings.js` (Booking history and cancellation)
+- `public/dashboard.html` & `public/js/dashboard.js` (Recent bookings overview)
 
-## Installation & Setup
-
-1. **Clone or Extract the Project**
-   Navigate to the project folder in your terminal.
-
-2. **Install Dependencies**
-   Run the following command to install all required backend packages:
-   ```bash
-   npm install
-   ```
-
-3. **Environment Configuration**
-   The project includes a `.env` file with the following variables:
-   ```env
-   NODE_ENV=development
-   PORT=5000
-   MONGODB_URI=mongodb://localhost:27017/sports-booking
-   SESSION_SECRET=my_super_secret_session_key_12345
-   ```
-   If you are using a cloud MongoDB instance, update the `MONGODB_URI` accordingly.
-
-4. **Seed the Database with Sample Data**
-   Run this command to insert demo sports equipment into the database:
-   ```bash
-   npm run seed
-   ```
-   *(Note: This will delete existing equipment in the database and insert new ones).*
-
-5. **Start the Application**
-   For development mode (auto-restarts on save):
-   ```bash
-   npm run dev
-   ```
-   For production mode:
-   ```bash
-   npm start
-   ```
-
-6. **Access the Website**
-   Open your browser and navigate to:
-   [http://localhost:5000](http://localhost:5000)
-
-## Testing the Workflow
-1. Go to **Register** and create a new student account.
-2. The system will log you out, go to **Login** with the created credentials.
-3. You will be redirected to the **Dashboard**.
-4. Click on **Equipment** to browse available items. Try searching or filtering.
-5. Click **Book Now** on any item, select dates and quantity.
-6. Check your **My Bookings** page to see the newly created reservation (defaults to Pending).
-7. Test the stock restriction by attempting to book more equipment than what is available.
-
-## Folder Structure
-- `/models`: Mongoose database schemas.
-- `/controllers`: Logic for authentication, equipment, and bookings.
-- `/routes`: API endpoints definition.
-- `/middleware`: Authentication check and error handler.
-- `/public`: Frontend static files (HTML, CSS, JS).
+## Notes
+- Requires authentication (uses `protect` middleware).
+- Must check `availableQuantity` of equipment before allowing a booking to be created.
+- Pending Tasks (Payment, Ratings) will likely require new models and routes.
